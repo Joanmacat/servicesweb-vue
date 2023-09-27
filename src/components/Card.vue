@@ -1,33 +1,44 @@
+<script setup>
+const props = defineProps({
+  title: String,
+  description: String,
+  location: String,
+  image: String,
+  link: String,
+  contact: String,
+  newDeal: Boolean,
+});
+</script>
+
 <template>
   <!-- Card -->
-  <a class="group rounded-xl overflow-hidden" href="#">
+  <a class="group rounded-xl overflow-hidden" :href="link" target="_blank">
     <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
       <img
         class="w-full h-full absolute top-0 left-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-        src="https://images.unsplash.com/photo-1586232702178-f044c5f4d4b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"
+        :src="image"
         alt="Image Description"
       />
-      <span
-        class="absolute top-0 right-0 rounded-tr-xl rounded-bl-xl text-xs font-medium bg-gray-800 text-white py-1.5 px-3 dark:bg-gray-900"
+      <!--<span
+        class="absolute top-0 right-0 rounded-tr-xl rounded-bl-xl text-xs font-medium bg-red-800 text-white py-1.5 px-3 dark:bg-gray-900"
       >
-        Sponsored
-      </span>
+        {{ props.newDeal }}
+      </span>-->
     </div>
 
     <div class="mt-7">
       <h3
         class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200"
       >
-        Studio by Preline
+        {{ props.title }}
       </h3>
       <p class="mt-3 text-gray-800 dark:text-gray-200">
-        Produce professional, reliable streams easily leveraging Preline's
-        innovative broadcast studio
+        {{ props.description }}
       </p>
       <p
         class="mt-5 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 group-hover:underline font-medium"
       >
-        Read more
+        Contact now!
         <svg
           class="w-2.5 h-2.5"
           width="16"
