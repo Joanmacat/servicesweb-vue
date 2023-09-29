@@ -47,7 +47,10 @@ onMounted(() => {
 });
 
 const filterServices = computed(() => {
-  return servicesList.filter(({ title }) => title.includes(searchInput.value));
+  const titleFiltered = servicesList.filter(({ title }) => title.includes(searchInput.value));
+  const categoryFiltered = servicesList.filter(({ category }) => category.includes(searchInput.value));
+
+  return titleFiltered.length > 0 ? titleFiltered : categoryFiltered;
 });
 
 onUnmounted(() => {
@@ -110,6 +113,7 @@ onUnmounted(() => {
         <Card
           :title="service.title"
           :description="service.description"
+          :category="service.category"
           :image="service.image"
           :link="service.link"
         ></Card>
@@ -119,6 +123,7 @@ onUnmounted(() => {
         <Card
           :title="service.title"
           :description="service.description"
+          :category="service.category"
           :image="service.image"
           :link="service.link"
         ></Card>
