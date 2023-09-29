@@ -2,6 +2,7 @@
 const props = defineProps({
   title: String,
   description: String,
+  category: String,
   location: String,
   image: String,
   link: String,
@@ -32,6 +33,7 @@ const props = defineProps({
       >
         {{ props.title }}
       </h3>
+      <p> {{ props.category }}</p>
       <p class="mt-3 text-gray-800 dark:text-gray-200">
         {{ props.description }}
       </p>

@@ -1,3 +1,10 @@
+<script setup>
+import Navbar from '../components/Navbar.vue';
+import InputForm from '../components/InputForm.vue';
+</script>
 <template>
-    <h1>Dashboard page</h1>
+    <div class="sidebar">
+        <Navbar></Navbar>
+        <InputForm></InputForm>
+    </div>
 </template>
