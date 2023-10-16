@@ -1,17 +1,17 @@
 <script setup>
-import Title from "../components/title.vue";
 import Card from "../components/Card.vue";
 import Footer from "../components/Footer.vue";
 import { servicesStore } from "../stores/Services";
+import Title from "./Title.vue";
 import { ref, onMounted, onUnmounted, computed } from "vue";
 
 const store = servicesStore();
 const displayedServices = ref([]);
-var searchInput = ref("");
+let searchInput = ref("");
 const services = ref(store.services);
-const servicesListTmp = Object.keys(services).map(key => services[key]);
-const servicesList = servicesListTmp[3];
 
+const servicesListTmp = Object.keys(services).map((key) => services[key]);
+const servicesList = servicesListTmp[3];
 
 const loading = ref(false);
 
@@ -30,25 +30,40 @@ const loadMoreServices = () => {
     }, 1000); // Simulate loading delay
   }
 };
-
 // Event listener for scrolling
 const handleScroll = () => {
   const scrollEl = document.documentElement;
   const offset = 10; // Load more services when user is 100px from the bottom
 
-  if (scrollEl.scrollTop + scrollEl.clientHeight + offset >= scrollEl.scrollHeight) {
+  if (
+    scrollEl.scrollTop + scrollEl.clientHeight + offset >=
+    scrollEl.scrollHeight
+  ) {
     loadMoreServices();
   }
 };
 
-onMounted(() => {
+onMounted(async () => {
+  // Populate de home witht he current data.
+  try {
+    store.fetchData();
+  } catch (error) {
+    console.log(error);
+  }
+
   loadMoreServices(); // Initially load the first set of services
   window.addEventListener("scroll", handleScroll);
 });
 
 const filterServices = computed(() => {
-  const titleFiltered = servicesList.filter(({ title }) => title.includes(searchInput.value));
-  const categoryFiltered = servicesList.filter(({ category }) => category.includes(searchInput.value));
+  const searchValue = searchInput.value.toLowerCase();
+
+  const titleFiltered = servicesList.filter(({ title }) =>
+    title.toLowerCase().includes(searchValue)
+  );
+  const categoryFiltered = servicesList.filter(({ category }) =>
+    category.toLowerCase().includes(searchValue)
+  );
 
   return titleFiltered.length > 0 ? titleFiltered : categoryFiltered;
 });
@@ -56,9 +71,6 @@ const filterServices = computed(() => {
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
 });
-
-
-
 </script>
 
 <template>
@@ -108,8 +120,11 @@ onUnmounted(() => {
     <br />
     <!-- GRID -->
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="card-grid">
-
-      <div v-for="(service, id) in displayedServices" :key="id" v-show="searchInput == ''">
+      <div
+        v-for="(service, id) in displayedServices"
+        :key="id"
+        v-show="searchInput == ''"
+      >
         <Card
           :title="service.title"
           :description="service.description"
@@ -119,7 +134,11 @@ onUnmounted(() => {
         ></Card>
       </div>
 
-      <div v-for="(service, id) in filterServices" :key="id" v-show="searchInput !== ''">
+      <div
+        v-for="(service, id) in filterServices"
+        :key="id"
+        v-show="searchInput !== ''"
+      >
         <Card
           :title="service.title"
           :description="service.description"
