@@ -1,16 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { servicesStore } from "../stores/Services";
-const store = servicesStore();
 
-const newService = ref("");
-const newId = ref("");
-const newTitle = ref("");
-const newCategory = ref("");
-const newDescription = ref("");
-const newLocation = ref("");
-const newUrl = ref("");
-const newImage = ref("");
+let newTitle = ref("");
+let newCategory = ref("");
+let newDescription = ref("");
+let newLink = ref("");
+let newImage = ref("");
+let newLocation = ref("");
 </script>
 
 <template>
@@ -26,7 +23,7 @@ const newImage = ref("");
       <div
         class="mt-5 p-4 relative z-10 bg-white border rounded-xl sm:mt-10 md:p-10 dark:bg-gray-800 dark:border-gray-700"
       >
-        <form @submit.prevent="handleSubmit">
+        <form>
           <div class="mb-4 sm:mb-8">
             <label
               for="hs-feedback-post-comment-name-1"
@@ -83,7 +80,7 @@ const newImage = ref("");
               id="hs-feedback-post-url-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="https://www.example.com"
-              v-model="newUrl"
+              v-model="newLink"
             />
           </div>
 
