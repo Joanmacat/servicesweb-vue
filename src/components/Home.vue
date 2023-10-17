@@ -47,6 +47,7 @@ onMounted(async () => {
   // Populate de home witht he current data.
   try {
     store.fetchData();
+    console.log(store.getData[0]);
   } catch (error) {
     console.log(error);
   }
@@ -86,7 +87,7 @@ onUnmounted(() => {
           <label
             for="hs-search-article-1"
             class="block text-sm text-gray-700 font-medium dark:text-white"
-            ><span class="sr-only">Search service</span></label
+            ><span class="sr-only">Search your service</span></label
           >
           <input
             type="search"
@@ -94,7 +95,7 @@ onUnmounted(() => {
             name="hs-search-article-1"
             id="hs-search-article-1"
             class="p-3 block w-full border-transparent rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-400"
-            placeholder="Search service"
+            placeholder="Search your service"
           />
         </div>
         <div class="flex-[0_0_auto]">

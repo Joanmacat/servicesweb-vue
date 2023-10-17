@@ -73,6 +73,7 @@ const triggerToast = (message) => {
               id="hs-feedback-post-comment-name-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="Enter company name"
+              required
               v-model="newTitle"
             />
           </div>
@@ -88,6 +89,7 @@ const triggerToast = (message) => {
               id="hs-feedback-post-category-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="Consultancy, accountant, restaurant..."
+              required
               v-model="newCategory"
             />
           </div>
@@ -103,6 +105,7 @@ const triggerToast = (message) => {
               id="hs-feedback-post-location-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="Washington D.C"
+              required
               v-model="newLocation"
             />
           </div>
@@ -118,6 +121,7 @@ const triggerToast = (message) => {
               id="hs-feedback-post-url-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="https://www.example.com"
+              required
               v-model="newLink"
             />
           </div>
@@ -133,6 +137,7 @@ const triggerToast = (message) => {
               id="hs-feedback-post-image-url-1"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
               placeholder="https://www.example.com/image.jpg"
+              required
               v-model="newImage"
             />
           </div>
@@ -163,6 +168,7 @@ const triggerToast = (message) => {
               type="submit"
               class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all dark:focus:ring-offset-gray-800"
               value="Submit"
+              required
             />
           </div>
         </form>
