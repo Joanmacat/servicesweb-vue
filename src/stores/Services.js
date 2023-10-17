@@ -7,6 +7,12 @@ export const servicesStore = defineStore("service", {
     services: [],
   }),
 
+  getters: {
+    getData() {
+      return this.services;
+    },
+  },
+
   actions: {
     async fetchData() {
       const querySnapshot = await getDocs(collection(db, "services"));
