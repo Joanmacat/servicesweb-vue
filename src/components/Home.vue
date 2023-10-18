@@ -47,7 +47,6 @@ onMounted(async () => {
   // Populate de home witht he current data.
   try {
     store.fetchData();
-    console.log(store.getData[0]);
   } catch (error) {
     console.log(error);
   }

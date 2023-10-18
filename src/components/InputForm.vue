@@ -25,7 +25,7 @@ const addNewService = async () => {
     location: newLocation.value,
   };
   try {
-    //await addDoc(collection(db, "services"), data);
+    await addDoc(collection(db, "services"), data);
     triggerToast("Service added successfully");
 
     // Clean variables after add new document
