@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 import "./style.css";
+import "preline";
 import router from "./router";
 import App from "./App.vue";
 
