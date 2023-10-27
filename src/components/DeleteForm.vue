@@ -76,6 +76,7 @@ const removeDocument = async (service) => {
               id="service-selector"
               v-model="selectedService"
               class="py-3 px-4 block w-full border border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500 sm:p-4 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400"
+              required
             >
               <option v-for="(title, id) in selectedId" :key="id" :value="id">
                 {{ title }}
