@@ -1,6 +1,5 @@
 <script setup>
 import Card from "../components/Card.vue";
-import Footer from "../components/Footer.vue";
 import { servicesStore } from "../stores/Services";
 import Title from "./Title.vue";
 import { ref, onMounted, onUnmounted, computed } from "vue";
@@ -151,8 +150,6 @@ onUnmounted(() => {
       <p v-if="loading">LOADING SUSPENSE...</p>
       <!-- END GRID -->
     </div>
-
-    <Footer></Footer>
     <!-- END CONTAINER -->
   </div>
 </template>
