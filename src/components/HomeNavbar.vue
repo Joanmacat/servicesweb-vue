@@ -13,7 +13,7 @@
           class="flex-none text-xl font-semibold dark:text-white"
           href="#"
           aria-label="Brand"
-          >Brand</a
+          >brand</a
         >
         <div class="sm:hidden">
           <button
