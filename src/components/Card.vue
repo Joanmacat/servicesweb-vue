@@ -13,50 +13,44 @@ const props = defineProps({
 
 <template>
   <!-- Card -->
-  <a class="group rounded-xl overflow-hidden" :href="link" target="_blank">
-    <div class="relative pt-[50%] sm:pt-[70%] rounded-xl overflow-hidden">
-      <img
-        class="w-full h-full absolute top-0 left-0 object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-xl"
-        :src="image"
-        alt="Image Description"
-      />
-      <!--<span
-        class="absolute top-0 right-0 rounded-tr-xl rounded-bl-xl text-xs font-medium bg-red-800 text-white py-1.5 px-3 dark:bg-gray-900"
-      >
-        {{ props.newDeal }}
-      </span>-->
+  <div
+    class="group flex flex-col h-full bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-slate-900 dark:border-gray-700 dark:shadow-slate-700/[.7]"
+  >
+    <div class="h-auto flex flex-col justify-center items-center rounded-t-xl">
+      <img :src="image" class="rounded-t-xl" />
     </div>
-
-    <div class="mt-7">
+    <div class="p-4 md:p-6">
+      <span
+        class="block mb-1 text-xs font-semibold uppercase text-blue-600 dark:text-blue-500"
+      >
+        {{ props.category }}
+      </span>
       <h3
-        class="text-xl font-semibold text-gray-800 group-hover:text-gray-600 dark:text-gray-200"
+        class="text-xl font-semibold text-gray-800 dark:text-gray-300 dark:hover:text-white"
       >
         {{ props.title }}
       </h3>
-      <p> {{ props.category }}</p>
-      <p class="mt-3 text-gray-800 dark:text-gray-200">
+      <p class="mt-3 text-gray-500">
         {{ props.description }}
       </p>
-      <p
-        class="mt-5 inline-flex items-center gap-x-1.5 text-blue-600 decoration-2 group-hover:underline font-medium"
-      >
-        Contact now!
-        <svg
-          class="w-2.5 h-2.5"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-        >
-          <path
-            d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-          />
-        </svg>
-      </p>
     </div>
-  </a>
+    <div
+      class="mt-auto flex border-t border-gray-200 divide-x divide-gray-200 dark:border-gray-700 dark:divide-gray-700"
+    >
+      <a
+        class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-es-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        :href="link"
+        target="_blank"
+      >
+        Website
+      </a>
+      <a
+        class="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-ee-xl bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+        href="#"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
   <!-- End Card -->
 </template>
