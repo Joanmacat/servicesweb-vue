@@ -12,7 +12,7 @@ const signin = () => {
   signInWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
       console.log("Successfully signed in");
-      router.push("/additem");
+      router.push("/dashboard");
     })
     .catch((error) => {
       console.log(error.code);
