@@ -13,7 +13,7 @@
           class="flex-none text-xl font-semibold dark:text-white"
           href="#"
           aria-label="Brand"
-          >Brand</a
+          >Dashboard</a
         >
         <div class="sm:hidden">
           <button
@@ -60,17 +60,7 @@
             class="font-medium text-blue-600 sm:py-6 dark:text-blue-500"
             href="/"
             aria-current="page"
-            >Services</a
-          >
-          <a
-            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
-            href="/additem"
-            >Add new Item</a
-          >
-          <a
-            class="font-medium text-gray-500 hover:text-gray-400 sm:py-6 dark:text-gray-400 dark:hover:text-gray-500"
-            href="/deleteitem"
-            >Delete item</a
+            >Log out</a
           >
         </div>
       </div>

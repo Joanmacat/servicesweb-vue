@@ -12,7 +12,7 @@ const register = () => {
   createUserWithEmailAndPassword(getAuth(), email.value, password.value)
     .then((data) => {
       console.log("Successfully registered");
-      router.push("/additem");
+      router.push("/dashboard");
     })
     .catch((error) => {
       console.log(error.code);
